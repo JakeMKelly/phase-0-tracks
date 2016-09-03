@@ -2,6 +2,8 @@
 
 **Instructions: ** Define each of the following Git concepts.
 
+* Minor change added here.
+
 * What is version control?  Why is it useful?
 
   Version control is a way to keep track of all changes made to and past versions of a file or set of files.
@@ -10,7 +12,7 @@
 * What is a branch and why would you use one?
 
   A branch is an area to work on or make changes to your base code seperate from the main copy of it. 
-  You would use one to preserve the master branch, while being able to search for errors or bugs in any new additions you make before adding it to your base.  Also, it allows someone else to review changes made before allowing it to become a part of the master branch
+  You would use one to preserve the master branch, while being able to search for errors or bugs in any new additions you make before adding it to your base.Also, it allows someone else to review changes made before allowing it to become a part of the master branch
 
 * What is a commit? What makes a good commit message?
 

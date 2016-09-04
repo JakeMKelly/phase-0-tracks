@@ -3,6 +3,35 @@
 	<title>Practice Form</title>
 </head>
 <body>
-
+	<form name="Big Trip" action="success.html" method="post">
+		<fieldset>
+			<div>
+				<label>Destination:</label>
+				<input type="text" name="destination" placeholder="Where do you wanna go?">
+			</div>
+			<div>
+				<label>Preferred Method of Travel:</label>
+				<select name="Transport">
+					<option value="train">Train</option>
+					<option value="boat">Boat</option>
+					<option value="plane">Plane</option>
+				</select>	
+			</div>
+			<div>
+				<label>Preferred Dates:</label>
+				<input type="date" name="preffered_date">
+			</div>
+			<div>
+				<input type="checkbox" name="mixtape-agree" value="agree">
+				I will bring my own mixtape/playlist.
+			</div>
+		</fieldset>
+		<fieldset>
+			<div>
+				<label>Dietary requests</label>
+				<textarea name="textarea" rows="10" cols="50">Vegan, no shellfish, other allergies, etc.</textarea>
+			</div>
+		</fieldset>
+	<button type="submit">Let's travel</button>
 </body>
 </html>

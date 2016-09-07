@@ -1,19 +1,25 @@
-	body{
-		font-family: helvetica;
+body{
+  font-family: helvetica;
+  margin-right: 40px;
+  margin-left: 40px;
+}
+
+h1 {
+  color: orange;
 	}
-	h1 {
-	  color: orange;
-	}
-	blockquote {
-	  border: 1px solid black;
-	  border-top: 10px solid gray;
-	  text-overflow: clip;
-	  text-overflow: ellipsis;
-	  text-overflow: "[...]";
-	  width: 30%;
-      float: left;
-      margin: 1px;
-	}	
-  blockquote > cite {
-  	  font-weight: bold;
-  }
+
+blockquote {
+  border: 1px solid black;
+  border-top: 10px solid gray;
+  width: 25%;
+  display: inline-block;
+  vertical-align: top;
+  margin: 1px;
+  padding: 20px;
+  padding-bottom: 60px;
+  height: 170px;
+}	
+
+blockquote > cite {
+  font-weight: bold;
+}

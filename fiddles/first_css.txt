@@ -1,0 +1,6 @@
+h1 {
+  color: orange;
+}
+blockquote {
+  border: 1px solid black;
+}

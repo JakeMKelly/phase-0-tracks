@@ -14,20 +14,18 @@
   }
 
   #external-links {
-  /*  position: relative;*/
     display: inline-block;
     vertical-align: top;
-    width: 200px;
+    width: 23%;
     list-style-type: none;
     padding-left: 0px;
     margin: 0;
   }
 
   #main-body {
-  /*  position: relative;
-  */  display: inline-block;
+    display: inline-block;
     vertical-align: top;
-    width: 700px;
+    width: 75%;
     margin: 0;
   }
 
@@ -35,7 +33,7 @@
   image, figure, and figcaption CSS if you'd like, 
   but it's optional! */
   img {
-    width: 30%;
+    width: 100%;
   }
 
   figure {

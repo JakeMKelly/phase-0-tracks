@@ -1,0 +1,29 @@
+.total-picture {
+  display: inline-block;
+  float: top;
+  position: absolute;
+  margin-left: 30%;
+  padding: 60px;
+  height: 200px;
+  width: 400px;
+}
+
+#octopus {
+  position: absolute;
+  margin-left: 25px;
+  margin-top: 50px;
+/*  margin-right: 33%;*/
+}
+
+#hat {
+  position: absolute;
+  float: top;
+  margin: auto;
+}
+
+#glasses {
+  position: absolute;
+  float: left;
+  margin-top: 28.5%;
+  margin-left: 13%;
+}

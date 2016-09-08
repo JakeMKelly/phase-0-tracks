@@ -18,7 +18,7 @@
     vertical-align: top;
     width: 23%;
     list-style-type: none;
-    padding-left: 0px;
+    padding: 3px;
     margin: 0;
   }
 
@@ -45,3 +45,9 @@
     font-style: italic;
     text-align: right;
   }
+
+@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+}

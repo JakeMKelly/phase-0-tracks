@@ -1,0 +1,24 @@
+- Approach the wall with elevators
+- Look at the wall between two sets of doors
+- Locate the Up/Down button panel
+  - If going up, press the higher button
+  - If going down, press the lower button
+- When bell rings, look at each elevator until you locate the one with open doors
+- Enter elevator with open doors
+- Turn around and face doors
+- Look to the left, then right of doors to locate floor button panel
+  - If desired floor number is more than half of total floors, begin 
+  scanning button panel from top left for the corresponding button
+  - If desired floor number is less than half of total floors, begin 
+  scanning button panel from bottom left for the corresponding button
+- When button of corresponding floor is located, press that button and that 
+  button only
+- If other passengers have selected floors lower than yours:
+  - Listen for bell to ring, then look at your selected button
+    - If your selected button is still lit, continue to wait
+    - If your selected button turns off, exit elevator through doors
+- If no other passengers are on, wait for bell to ring and verify your floor has
+been reached by ensuring its matching button light is turned off and exit through
+doors
+
+

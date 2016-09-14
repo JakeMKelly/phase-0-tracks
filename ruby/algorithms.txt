@@ -22,3 +22,30 @@ been reached by ensuring its matching button light is turned off and exit throug
 doors
 
 
+** Ordering a pizza on your phone **
+- Remove phone from pocket
+- Unlock phone screen
+- Navigate to web browser or favorite pizza restaurant app
+  - If using browser, type favorite pizza restaurant website address in address 
+  bar
+- Choose delivery or pickup
+  - If delivery is chosen, enter home address and desired delivery time
+  - If pickup is chosen, select desired pickup time
+- Select "Choose your own toppings" or Specialty pizza
+  - If choosing your own, select crust type
+    - Then select toppings
+    - Select quantity
+  - If specialty is desired, select pizza
+    - Select quantity
+- Select any additional items to add to order
+  - If soda is desired, choose type and quantity
+  - If breadsticks are desired, choose quantity 
+  - If pizza-cookie is desired, hit "Add to cart"
+- Click "Check Out"
+- Select payment method
+  - If paying by credit card, enter your card info 
+    - Then enter your billing address
+  - If paying by cash, make sure you have enough for a decent tip
+- Click "Submit Order"
+- Lock your phone screen
+- Put phone back in your pocket or on a clean surface

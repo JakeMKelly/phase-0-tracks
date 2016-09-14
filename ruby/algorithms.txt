@@ -1,0 +1,51 @@
+- Approach the wall with elevators
+- Look at the wall between two sets of doors
+- Locate the Up/Down button panel
+  - If going up, press the higher button
+  - If going down, press the lower button
+- When bell rings, look at each elevator until you locate the one with open doors
+- Enter elevator with open doors
+- Turn around and face doors
+- Look to the left, then right of doors to locate floor button panel
+  - If desired floor number is more than half of total floors, begin 
+  scanning button panel from top left for the corresponding button
+  - If desired floor number is less than half of total floors, begin 
+  scanning button panel from bottom left for the corresponding button
+- When button of corresponding floor is located, press that button and that 
+  button only
+- If other passengers have selected floors lower than yours:
+  - Listen for bell to ring, then look at your selected button
+    - If your selected button is still lit, continue to wait
+    - If your selected button turns off, exit elevator through doors
+- If no other passengers are on, wait for bell to ring and verify your floor has
+been reached by ensuring its matching button light is turned off and exit through
+doors
+
+
+** Ordering a pizza on your phone **
+- Remove phone from pocket
+- Unlock phone screen
+- Navigate to web browser or favorite pizza restaurant app
+  - If using browser, type favorite pizza restaurant website address in address 
+  bar
+- Choose delivery or pickup
+  - If delivery is chosen, enter home address and desired delivery time
+  - If pickup is chosen, select desired pickup time
+- Select "Choose your own toppings" or Specialty pizza
+  - If choosing your own, select crust type
+    - Then select toppings
+    - Select quantity
+  - If specialty is desired, select pizza
+    - Select quantity
+- Select any additional items to add to order
+  - If soda is desired, choose type and quantity
+  - If breadsticks are desired, choose quantity 
+  - If pizza-cookie is desired, hit "Add to cart"
+- Click "Check Out"
+- Select payment method
+  - If paying by credit card, enter your card info 
+    - Then enter your billing address
+  - If paying by cash, make sure you have enough for a decent tip
+- Click "Submit Order"
+- Lock your phone screen
+- Put phone back in your pocket or on a clean surface

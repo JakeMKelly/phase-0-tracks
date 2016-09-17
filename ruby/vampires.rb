@@ -73,6 +73,8 @@ elsif probably_is && vamp_handle
 	puts "Definitely a vampire."
 elsif almost_certain && vamp_handle
 	puts "Definitely a vampire."
+elsif inconclusive && vamp_handle
+	puts "Definitely a vampire."
 else
 	puts "Results inconclusive."
 end

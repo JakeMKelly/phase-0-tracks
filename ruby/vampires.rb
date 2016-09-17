@@ -13,15 +13,13 @@ else
 end
 
 print "How old are you?" 
-age = gets.chomp
-age = age.to_i
+age = gets.to_i
 
 print "What year were you born?"
-birth_year = gets.chomp
-birth_year = birth_year.to_i
+birth_year = gets.to_i
+current_year = 2016
 
-case birth_year
-when 2016 - birth_year === age
+if current_year - birth_year === age
 	real_age = true
 else
 	real_age = false
@@ -52,17 +50,33 @@ end
 
 
 if real_age && (likes_garlic || mortal)
-	puts "Probably not a vampire."
-elsif (real_age === false) && (likes_garlic === false || mortal === false)
-	puts "Probably a vampire."
+	probably_not = true
+elsif (real_age === false) && (likes_garlic === false && mortal === true)
+	probably_is = true
+elsif (real_age === false) && (likes_garlic === true && mortal === false)
+	probably_is = true
 elsif (real_age === false) && (likes_garlic === false && mortal === false)
+	almost_certain = true
+else  
+	inconclusive = true 
+end
+
+if probably_not && (vamp_handle === false)
+	puts "Probably not a vampire."
+elsif probably_is && (vamp_handle === false)
+	puts "Probably a vampire."
+elsif almost_certain && (vamp_handle === false)
 	puts "Almost certainly a vampire."
-elsif vamp_handle 
+elsif probably_not && vamp_handle
+	puts "Definitely a vampire."
+elsif probably_is && vamp_handle
+	puts "Definitely a vampire."
+elsif almost_certain && vamp_handle
 	puts "Definitely a vampire."
 else
-	puts "Error."
+	puts "Results inconclusive."
 end
-	
+			
 
 #If the employee got their age right, and is willing to eat garlic bread or sign up for insurance, the result is “Probably not a vampire.”
 # If the employee got their age wrong, and hates garlic bread or waives insurance, the result is “Probably a vampire.”

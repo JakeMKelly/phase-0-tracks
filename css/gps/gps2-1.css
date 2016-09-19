@@ -2,19 +2,35 @@ header {
   background-color: white;
 }
 
+body {
+  font-family: Arial;
+  background-image: url("http://www.clipartbest.com/cliparts/4cb/Goj/4cbGojMcg.svg");
+}
+
 .column-1 {
-   background-color: yellow;
-   display: inline-block;
-   width: 45%;
+  background-color: rgb(113, 142, 164);
+  display: inline-block;
+  vertical-align: top;
+  width: 45%;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
 }
 
 .column-2 {
-   background-color: blue;
-   display: inline-block;
-   width: 45%;
+  background-color: rgb(113, 142, 164);
+  display: inline-block;
+  vertical-align: top;
+  width: 45%;
+  border: 1px, solid, black;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
 }
 
 footer {
-   background-color: red;
-  
+  background-color: red;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
 }

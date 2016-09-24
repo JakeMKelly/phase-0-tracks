@@ -38,4 +38,19 @@ puts "Here's your info:"
 puts client
 puts "-" * 17
 
+puts "Would you like to update?  If yes, please enter the key you would like to 
+change first.  If this looks correct, just type 'none'."
+key_change = gets.chomp
 
+if key_change == "none"
+	puts "Thanks. Here's your info again."
+else 
+	puts "Change value to?"
+	updated_info = gets.chomp
+	client_update = {
+		key_change.to_sym => updated_info
+	}
+	client.merge!(client_update)
+end
+
+p client

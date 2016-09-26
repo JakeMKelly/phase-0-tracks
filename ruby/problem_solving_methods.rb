@@ -36,13 +36,17 @@ def fib(x)
 	# new_array = []
 
 	until fib_array.length == x 
-	fib_array.each do 
 	total_value = fib_array[-1] + fib_array[-2]
 	fib_array << total_value
 	end
+
+	if fib_array[-1] == 218922995834555169026
+		puts fib_array  puts "True"
+	else
+	puts fib_array
 	end
-	p fib_array
 end
 
 
 fib(6)
+fib(100)

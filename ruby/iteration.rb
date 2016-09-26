@@ -36,3 +36,7 @@ cars.reject! {|make, model| model.length <= 7 }
 p cars
 prices.reject! {|price| price >= 8000 }
 p prices
+cars.delete_if {cars.has_key?(:chevy) == true}
+p cars
+prices.drop_while {|price| price > 1000 }
+p prices

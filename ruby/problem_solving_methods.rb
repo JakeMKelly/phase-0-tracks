@@ -51,9 +51,23 @@ fib(100)
 	# If it is more than the next integer, repeat the process
 	# return the sorted array
 
-def sort(array)
-	array.each.map! do |x, y| 
-		if x > y
-			
-		end
+list = [56, 31, 12, 5, 62, 2]
+
+def bubble_sort(list)
+    swap = true
+    while swap
+        swap = false
+        list.each_with_index do |number, index|
+            next_number = list[index + 1]
+            break if index == list.length - 1
+            if number > list[index + 1]
+                list[index] = next_number
+                list[index + 1] = number
+                swap = true
+            end
+        end
+    p list
+    end
 end
+
+bubble_sort(list)

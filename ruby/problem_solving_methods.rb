@@ -50,3 +50,17 @@ end
 
 fib(6)
 fib(100)
+
+# Sorting method
+# For an array
+	# Take each integer in the array and compare it to the next
+	# If it is less than the next integer, swap the position
+	# If it is more than the next integer, repeat the process
+	# return the sorted array
+
+def sort(array)
+	array.each.map! do |x, y| 
+		if x > y
+			
+		end
+end

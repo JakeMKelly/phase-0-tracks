@@ -1,33 +1,26 @@
-# arr = [42, 89, 23, 1]
-# arr_2 = [42, 89, 23, 1, 5]
 
-# def search_array(array_name, x)
 # 	# iterate through array_name to find x and return its index location
 # 		# if x is found
+arr = [42, 89, 23, 1]
+arr_2 = [42, 89, 23, 1, 5]
 
-	
-# 	array_name.each do |a|
-			
-# 			if a == x
-# 				until array_name.length
-# 				i = 0
-# 				p i
-# 				i += 1
-# 			end
-# 			else 
-# 				puts nil
-# 			end
+def search_array(to_search, search_value)
+    counter = 0
 
-# 	end
+    to_search.each do |search_elem|
+       break if search_elem == search_value
+       counter += 1
+    end
 
-# end
+    if counter == to_search.length
+        p nil
+    else
+        p counter
+    end
+end
 
-# search_array(arr, 89)
+search_array(arr, 89)
 
-# search_array(arr, 7)
-
-# We spent an hour and a half trying to get this to work, trying to move on to the 
-# next release
 
 
 

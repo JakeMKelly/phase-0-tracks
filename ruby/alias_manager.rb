@@ -37,7 +37,8 @@ def letter_changer(user_name)
 			new_name << letter 
 		end
 	end	
-	new_name.split(" ").rotate 
+	new_name.split(" ").rotate.join(" ") 
+
 end
 # I know that the certain consonants are going to return a vowel, so I need to 
 # figure out a solution for it.
@@ -63,11 +64,9 @@ until user_name == "exit"
 	name_array << letter_changer(user_name)
 end
 
+# Store each new name in an array, and print each in a user-friendly
+# manner when finished.
+
 puts "Here are your new code names:"
 puts name_array
 
-# I need to find a better way to return each code name, it's currently just printing them
-# last, first, last, first, one line per name. 
-
-# Store each new name in an array, and print each in a user-friendly
-# manner when finished.

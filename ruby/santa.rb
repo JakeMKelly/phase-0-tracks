@@ -5,6 +5,10 @@ class Santa
 		@ethnicity = ethnicity
 	end
 
+	def gender_ethnicity(gender, ethnicity)
+		puts "#{@gender}, #{@ethnicity}"
+	end
+
 	def speak
 		puts "Ho, ho, ho! Haaaappy holidays!"	
 	end
@@ -33,4 +37,3 @@ santas << Santa.new("male", "Japanese")
 santas << Santa.new("female", "prefer not to say")
 santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
 santas << Santa.new("N/A", "N/A")
-p santas

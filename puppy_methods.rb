@@ -16,6 +16,10 @@ class Puppy
 	def dog_years(y)
 		p y * 7
 	end
+
+	def play_dead(a) 
+		puts "Lays down for #{a} seconds."
+	end
 end
 
 dog = Puppy.new
@@ -23,3 +27,4 @@ dog.fetch("bone")
 dog.speak(3)
 dog.roll_over
 dog.dog_years(5)
+dog.play_dead(6)

@@ -32,3 +32,18 @@ dog.speak(3)
 dog.roll_over
 dog.dog_years(5)
 dog.play_dead(6)
+
+class Car
+
+	def initialize
+		puts "Initializing new car."
+	end
+
+	def hated_brand(manufacturer)
+		puts "Any car made by #{manufacturer} sucks!"
+	end
+
+	def rev_engine(x)
+		puts "Vroom!" * x
+	end
+end

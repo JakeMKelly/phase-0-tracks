@@ -40,10 +40,19 @@ class Car
 	end
 
 	def hated_brand(manufacturer)
-		puts "Any car made by #{manufacturer} sucks!"
+		p "Any car made by #{manufacturer} sucks!"
 	end
 
 	def rev_engine(x)
-		puts "Vroom!" * x
+		p "Vroom!" * x
 	end
 end
+
+garage = []
+
+50.times do 
+	garage << cars = Car.new
+	cars.hated_brand("Ford")
+	cars.rev_engine(2)
+end
+p garage

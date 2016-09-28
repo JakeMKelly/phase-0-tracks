@@ -55,4 +55,9 @@ garage = []
 	cars.hated_brand("Ford")
 	cars.rev_engine(2)
 end
+
 p garage
+garage.each do |vehicle|
+	vehicle.hated_brand("Chevy")
+	vehicle.rev_engine(3)
+end

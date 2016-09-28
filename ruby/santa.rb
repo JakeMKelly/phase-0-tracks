@@ -1,6 +1,6 @@
 class Santa
 	def initialize
-		"Initializing Santa instance..."
+		puts "Initializing Santa instance..."
 	end
 
 	def speak
@@ -11,3 +11,7 @@ class Santa
 		puts "That was a good #{cookie_type}!"
 	end
 end
+
+kringle = Santa.new
+kringle.speak
+kringle.eat_milk_and_cookies("brookie")

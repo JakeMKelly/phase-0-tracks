@@ -17,12 +17,33 @@ class Santa
 		puts "That was a good #{cookie_type}!"
 	end
 
-	def ranker_method
+	def reindeer_ranker
 		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
 	end
 
-	def age_method
-		@age = 0
+	def age_method(age = 0)
+		@age = age
+	end
+
+	def celebrate_birthday
+		@age = @age + 1
+	end
+
+	def get_mad_at(bad_reindeer)
+		@reindeer_ranking.delete("#{bad_reindeer}")
+		@reindeer_ranking.push(bad_reindeer)
+	end
+
+	def age 
+		@age
+	end
+
+	def ethnicity
+		@ethnicity
+	end
+
+	def gender=(reassigned_gender)
+		@gender = reassigned_gender
 	end
 end
 
@@ -41,3 +62,24 @@ end
 end
 p santas
 p santas.length
+
+santa = Santa.new("white","female")
+
+p santa.ethnicity
+p santa
+p santa.age
+
+santa.age_method(70)
+p santa.age
+
+santa.celebrate_birthday
+p santa.age
+
+santa.reindeer_ranker
+p santa.reindeer_ranker
+
+santa.get_mad_at("Dancer")
+p santa.reindeer_ranker
+
+santa.gender("male")
+p santa.gender

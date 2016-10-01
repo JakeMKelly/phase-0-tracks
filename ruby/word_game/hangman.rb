@@ -4,5 +4,6 @@ class Game
 	def initialize(code_word)
 		@code_word = code_word
 		@is_over = false
+		@guesses = []
 	end
 end

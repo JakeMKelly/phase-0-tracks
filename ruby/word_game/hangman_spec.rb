@@ -6,7 +6,21 @@ require_relative 'hangman'
 
 describe Game do 
 	let(:game) {Game.new("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")}
-	
+
+	it "has a readable secret word from player one" do
+		expect(game.code_word).to eq "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	end	
+
+	it "has a readable game over status" do
+		expect(game.is_over).to eq false
+	end
+
+	it "creates an readable array for player two's guesses" do 
+		expect(game.guesses).to eq []
+	end
+
+end
+
 # 	write a method to allow for repeat guesses that takes player two's entire word as an argument, 
 # 		if it does not match anything in the guesses array,		
 # 			then store it in the guesses array
@@ -43,5 +57,3 @@ describe Game do
 # 			congratulate them and include player one's word
 # 		or else, (player two hit limit without solving the word)
 # 			print a taunting message that includes player one's word
-
-# 	

@@ -12,9 +12,13 @@
 # p Shout.yelling_happily("I found my brain")
 
 module Shout
-	def yell_louder(words)
-		words.upcase + "!!!!!"
+	def yell_angrily(words)
+		puts words + "!!!" + ":("
 	end
+
+	def yelling_happily(words)
+		puts words + "!!!" + "XD XD XD"
+	end	
 end
 
 class Concert_goer
@@ -24,3 +28,11 @@ end
 class Ticket_scalper
 	include Shout
 end
+
+fan = Concert_goer.new
+fan.yell_angrily("They're not playing my favorite song")
+fan.yelling_happily("They're playing my favorite song")
+
+seller = Ticket_scalper.new
+seller.yell_angrily("Somebody buy these tickets, the show's starting")
+seller.yelling_happily("I'm all out of tickets, I sold them all")

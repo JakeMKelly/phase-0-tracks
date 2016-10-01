@@ -1,4 +1,7 @@
 class Santa
+	attr_reader :ethnicity, :age
+	attr_accessor :gender
+
 	def initialize(gender, ethnicity)
 		puts "Initializing Santa instance..."
 		@gender = gender
@@ -21,7 +24,7 @@ class Santa
 		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
 	end
 
-	def age_method(age = 0)
+	def current_age(age = 0)    
 		@age = age
 	end
 
@@ -33,18 +36,6 @@ class Santa
 		@reindeer_ranking.delete(bad_reindeer)
 		@reindeer_ranking.push(bad_reindeer)
 	end
-
-	def age 
-		@age
-	end
-
-	def ethnicity
-		@ethnicity
-	end
-
-	def gender=(reassigned_gender)
-		@gender = reassigned_gender
-	end
 end
 
 # kringle = Santa.new
@@ -55,7 +46,7 @@ santas = []
 example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 
-while santas.length <= 15 do 
+while santas.length <= 5 do 
 example_genders.length.times do |i|
   santas << Santa.new(example_genders[i], example_ethnicities[i])
 end
@@ -63,13 +54,13 @@ end
 p santas
 p santas.length
 
-santa = Santa.new("white","female")
+santa = Santa.new("female", "white")
 
 p santa.ethnicity
 p santa
-p santa.age
+p santa.current_age
 
-santa.age_method(70)
+santa.current_age(70)
 p santa.age
 
 santa.celebrate_birthday
@@ -78,8 +69,13 @@ p santa.age
 santa.reindeer_ranker
 p santa.reindeer_ranker
 
-santa.get_mad_at("Dancer")
+p santa.get_mad_at("Dancer")
 
+santa.gender = "male"
+puts "Santa is a #{santa.ethnicity} #{santa.gender}	."
 
-santa.gender("male")
-p santa.gender
+100.times do 
+	p Santa.new(example_genders.sample, example_ethnicities.sample)
+	p santa.current_age(rand(140))
+
+end

@@ -1,2 +1,2 @@
-class Hangman
+class Game
 end

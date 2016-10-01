@@ -30,7 +30,7 @@ class Santa
 	end
 
 	def get_mad_at(bad_reindeer)
-		@reindeer_ranking.delete("#{bad_reindeer}")
+		@reindeer_ranking.delete(bad_reindeer)
 		@reindeer_ranking.push(bad_reindeer)
 	end
 
@@ -79,7 +79,7 @@ santa.reindeer_ranker
 p santa.reindeer_ranker
 
 santa.get_mad_at("Dancer")
-p santa.reindeer_ranker
+
 
 santa.gender("male")
 p santa.gender

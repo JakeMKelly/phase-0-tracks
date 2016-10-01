@@ -74,7 +74,7 @@ p santa.get_mad_at("Dancer")
 santa.gender = "male"
 puts "Santa is a #{santa.ethnicity} #{santa.gender}	."
 
-100.times do 
+10000.times do 
 	p Santa.new(example_genders.sample, example_ethnicities.sample)
 	p santa.current_age(rand(140))
 

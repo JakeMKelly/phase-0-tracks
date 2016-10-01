@@ -5,10 +5,10 @@
 require_relative 'hangman'
 
 describe Game do 
-	let(:game) {Game.new("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")}
+	let(:game) {Game.new("abcdefghijklmnopqrstuvwxyz")}
 
 	it "has a readable secret word from player one" do
-		expect(game.code_word).to eq "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+		expect(game.code_word).to eq "abcdefghijklmnopqrstuvwxyz"
 	end	
 
 	it "has a readable game over status" do
@@ -19,7 +19,42 @@ describe Game do
 		expect(game.guesses).to eq []
 	end
 
+	it "creates a guess limit from code word length" do 
+		expect(game.guess_limit).to eq code_word.split("").length
+	end
+
+	it "splits player one's word into an array" do
+		expect(game.code_word_letters).to eq code_word.split("").length 
+	end
+
+	it "does not count repeat guesses against player two's guess limit" do
+		game.player_two_guess("abc")
+		game.player_two_guess("abc")
+		expect(game.remaining_guesses).to eq 25
+	end
+
+	it "prints the code word with '_' as a mask for each letter after each guess" do
+		expect(game.masked_word).to eq "-" * 26
+	end
+
+	it "replaces '_' with the correct letter in correct position with each new guess" do
+		game.player_two_guess("bcdefghiklmnopqrstuvwxy")
+		expect(game.masked_word).to eq "_bcdefghi_klmnopqrstuvwxy_"
+	end
+
+	it "ends the game at the appropriate time" do
+		game.guessed_word = game.code_word
+		expect(game.is_over).to eq true
+		game.remaining_guesses = 0
+		expect(game.is_over).to eq true 
+	end
+
+	it "prints the appropriate end of game message" do
+		expect(game.winner_message).to eq "Congrats! You guessed #{game.code_word}!"
+		expect(game.loser_message).to eq "Booooooo. You couldn't guess #{game.code_word}? Better step up your vocab!"
+	end
 end
+
 
 # 	write a method to allow for repeat guesses that takes player two's entire word as an argument, 
 # 		if it does not match anything in the guesses array,		

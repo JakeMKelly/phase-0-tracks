@@ -42,7 +42,9 @@ describe Game do
 
 	it "replaces '_' with the correct letter in correct position with each new guess" do
 		game.guessed_letter("b")
-		expect(game.code_word_printer).to eq "_b________________________"
+		expect(game.code_word_printer("b")).to eq "_b________________________"
+		game.guessed_letter("f")
+		expect(game.code_word_printer("f")).to eq "_b___f____________________"
 	end
 
 	it "ends the game at the appropriate time" do

@@ -8,6 +8,7 @@ class Game
 		@guess_limit = @code_word.split("").length
 		@code_word_array = @code_word.split("")
 		@masked_word = "_" * @code_word_array.length
+		@correct_guess = []
 	end
 
 	def guessed_letter(guess)
@@ -18,16 +19,21 @@ class Game
 		end		
 	end
  # Work on this vvvv
-	def code_word_printer
+	def code_word_printer(guess)
 		new_masked_word = []
-
 		@code_word_array.each do |letter|
-			if @guess = letter
+			if letter == @guess
+				@correct_guess << letter 
+				new_masked_word << letter
+			elsif @correct_guess.include?(letter)
 				new_masked_word << letter
 			else
 				new_masked_word << "_"
 			end
 		end
+		p new_masked_word.join
+		# p correct_guess
+		# p @code_word_array
 	end
 
 	def winner_message

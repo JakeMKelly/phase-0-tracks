@@ -18,7 +18,7 @@ class Game
 		@guess_limit -= 1
 		end		
 	end
- # Work on this vvvv
+
 	def code_word_printer(guess)
 		new_masked_word = []
 		@code_word_array.each do |letter|
@@ -31,9 +31,7 @@ class Game
 				new_masked_word << "_"
 			end
 		end
-		p new_masked_word.join
-		# p correct_guess
-		# p @code_word_array
+		new_masked_word.join
 	end
 
 	def winner_message

@@ -47,16 +47,13 @@ describe Game do
 		expect(game.code_word_printer("f")).to eq "_b___f____________________"
 	end
 
-	it "ends the game at the appropriate time" do
+	it "ends the game at the appropriate time and prints the appropriate end of game message" do
 		game.code_word_printer = game.code_word
 		expect(game.is_over).to eq true
+		expect(game.end_message).to eq "Congrats! You guessed #{game.code_word}!"
 		game.remaining_guesses = 0
 		expect(game.is_over).to eq true 
-	end
-
-	it "prints the appropriate end of game message" do
-		expect(game.winner_message).to eq "Congrats! You guessed #{game.code_word}!"
-		expect(game.loser_message).to eq "Booooooo. You couldn't guess #{game.code_word}? Better step up your vocab!"
+		expect(game.end_message).to eq "Booooooo. You couldn't guess #{game.code_word}? Better step up your vocab!"
 	end
 end
 

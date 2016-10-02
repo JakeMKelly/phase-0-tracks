@@ -31,14 +31,21 @@ class Game
 				new_masked_word << "_"
 			end
 		end
+		@guess_limit -= 1
 		new_masked_word.join
 	end
 
 	def winner_message
-		"Congrats! You guessed #{@code_word}!"
+		if new_masked_word.join == @code_word
+			p "Congrats! You guessed #{@code_word}!"
+			@is_over
+		end
 	end
 
 	def loser_message
-		"Booooooo. You couldn't guess #{@code_word}? Better step up your vocab!"
+		if @guess_limit == 0
+			p "Booooooo. You couldn't guess #{@code_word}? Better step up your vocab!"
+			@is_over
+		end
 	end
 end

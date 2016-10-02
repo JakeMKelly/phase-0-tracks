@@ -11,30 +11,33 @@ describe Game do
 		expect(game.code_word).to eq "abcdefghijklmnopqrstuvwxyz"
 	end	
 
-	it "has a readable game over status" do
+	it "has a readable game-over status" do
 		expect(game.is_over).to eq false
 	end
 
-	it "creates an readable array for player two's guesses" do 
+	it "creates a readable array for player two's guesses" do 
 		expect(game.guesses).to eq []
 	end
 
 	it "creates a guess limit from code word length" do 
-		expect(game.guess_limit).to eq code_word.split("").length
+		expect(game.guess_limit).to eq 26
 	end
 
 	it "splits player one's word into an array" do
-		expect(game.code_word_letters).to eq code_word.split("").length 
+		expect(game.code_word_array).to eq game.code_word.split("") 
 	end
 
 	it "does not count repeat guesses against player two's guess limit" do
-		game.player_two_guess("abc")
-		game.player_two_guess("abc")
-		expect(game.remaining_guesses).to eq 25
+		game.guessed_letter("a")
+		game.guessed_letter("a")
+		expect(game.guess_limit).to eq 25
+		game.guessed_letter("b")
+		game.guessed_letter("b")
+		expect(game.guess_limit).to eq 24
 	end
 
 	it "prints the code word with '_' as a mask for each letter after each guess" do
-		expect(game.masked_word).to eq "-" * 26
+		expect(game.code_word_printer).to eq "_" * 26
 	end
 
 	it "replaces '_' with the correct letter in correct position with each new guess" do
@@ -43,7 +46,7 @@ describe Game do
 	end
 
 	it "ends the game at the appropriate time" do
-		game.guessed_word = game.code_word
+		game.masked_word = game.code_word
 		expect(game.is_over).to eq true
 		game.remaining_guesses = 0
 		expect(game.is_over).to eq true 

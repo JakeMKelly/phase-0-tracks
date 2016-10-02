@@ -5,7 +5,7 @@
 require_relative 'hangman'
 
 describe Game do 
-	let(:game) {Game.new("abcdefghijklmnopqrstuvwxyz")}
+	let(:game) { Game.new("abcdefghijklmnopqrstuvwxyz") }
 
 	it "has a readable secret word from player one" do
 		expect(game.code_word).to eq "abcdefghijklmnopqrstuvwxyz"
@@ -48,10 +48,15 @@ describe Game do
 	end
 
 	it "ends the game at the appropriate time and prints the appropriate end of game message" do
-		game.code_word_printer = game.code_word
+		game.masked_word = game.code_word
+		game.game_status
 		expect(game.is_over).to eq true
 		expect(game.end_message).to eq "Congrats! You guessed #{game.code_word}!"
-		game.remaining_guesses = 0
+	end
+
+	it "prints a taunting message if player two loses" do
+		game.guess_limit = 0
+		game.game_status
 		expect(game.is_over).to eq true 
 		expect(game.end_message).to eq "Booooooo. You couldn't guess #{game.code_word}? Better step up your vocab!"
 	end

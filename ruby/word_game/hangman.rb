@@ -1,6 +1,6 @@
 class Game
-	attr_reader :code_word, :is_over, :guesses, :code_word_array, :guess_limit
-	attr_reader :masked_word
+	attr_reader :code_word, :is_over, :guesses, :code_word_array, :end_message
+	attr_accessor :masked_word, :guess_limit 
 	def initialize(code_word)
 		@code_word = code_word
 		@is_over = false
@@ -32,20 +32,19 @@ class Game
 			end
 		end
 		@guess_limit -= 1
+		@masked_word = new_masked_word.join
 		new_masked_word.join
 	end
 
-	def winner_message
-		if new_masked_word.join == @code_word
-			p "Congrats! You guessed #{@code_word}!"
-			@is_over
-		end
-	end
-
-	def loser_message
-		if @guess_limit == 0
-			p "Booooooo. You couldn't guess #{@code_word}? Better step up your vocab!"
-			@is_over
+	def game_status
+		if @masked_word == @code_word
+			@end_message = "Congrats! You guessed #{@code_word}!"
+			@is_over = true
+		elsif @guess_limit == 0
+			@end_message = "Booooooo. You couldn't guess #{@code_word}? Better step up your vocab!"
+			@is_over = true
+		else
+			@is_over = false
 		end
 	end
 end

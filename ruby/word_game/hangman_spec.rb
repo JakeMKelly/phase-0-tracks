@@ -37,16 +37,16 @@ describe Game do
 	end
 
 	it "prints the code word with '_' as a mask for each letter after each guess" do
-		expect(game.code_word_printer).to eq "_" * 26
+		expect(game.masked_word).to eq "_" * 26
 	end
 
 	it "replaces '_' with the correct letter in correct position with each new guess" do
-		game.player_two_guess("bcdefghiklmnopqrstuvwxy")
-		expect(game.masked_word).to eq "_bcdefghi_klmnopqrstuvwxy_"
+		game.guessed_letter("b")
+		expect(game.code_word_printer).to eq "_b________________________"
 	end
 
 	it "ends the game at the appropriate time" do
-		game.masked_word = game.code_word
+		game.code_word_printer = game.code_word
 		expect(game.is_over).to eq true
 		game.remaining_guesses = 0
 		expect(game.is_over).to eq true 

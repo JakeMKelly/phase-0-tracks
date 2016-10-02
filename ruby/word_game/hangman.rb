@@ -1,12 +1,13 @@
 class Game
 	attr_reader :code_word, :is_over, :guesses, :code_word_array, :guess_limit
-
+	attr_reader :masked_word
 	def initialize(code_word)
 		@code_word = code_word
 		@is_over = false
 		@guesses = []
 		@guess_limit = @code_word.split("").length
 		@code_word_array = @code_word.split("")
+		@masked_word = "_" * @code_word_array.length
 	end
 
 	def guessed_letter(guess)
@@ -17,19 +18,18 @@ class Game
 		end		
 	end
  # Work on this vvvv
-	# def code_word_printer
-	# 	@masked_word = "_" * @code_word_array.length
-	# 	new_masked_word = []
+	def code_word_printer
+		new_masked_word = []
 
-	# 	@code_word_array.each do |letter|
-	# 		if @guess = letter
-	# 			new_masked_word << @code_word_array.index = letter
-	# 		else
-	# 			@code_word_array[index] = "_"
-	# 		end
-	# 		@masked_word.replace(new_masked_word)
-	# 	end
-	# end
+		@code_word_array.each do |letter|
+			if @guess = letter
+				new_masked_word << letter
+			else
+				new_masked_word << "_"
+			end
+		end
+	end
+
 	def winner_message
 		"Congrats! You guessed #{@code_word}!"
 	end

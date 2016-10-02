@@ -5,8 +5,8 @@ class Game
 		@code_word = code_word
 		@is_over = false
 		@guesses = []
-		@guess_limit = @code_word.split("").length
 		@code_word_array = @code_word.split("")
+		@guess_limit = @code_word_array.length
 		@masked_word = "_" * @code_word_array.length
 		@correct_guess = []
 	end
@@ -31,9 +31,9 @@ class Game
 				new_masked_word << "_"
 			end
 		end
-		@guess_limit -= 1
+		# @guess_limit -= 1
 		@masked_word = new_masked_word.join
-		new_masked_word.join
+		p new_masked_word.join
 	end
 
 	def game_status

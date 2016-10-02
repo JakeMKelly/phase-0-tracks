@@ -38,13 +38,28 @@ class Game
 
 	def game_status
 		if @masked_word == @code_word
-			@end_message = "Congrats! You guessed #{@code_word}!"
+			p @end_message = "Congrats! You guessed #{@code_word}!"
 			@is_over = true
 		elsif @guess_limit == 0
-			@end_message = "Booooooo. You couldn't guess #{@code_word}? Better step up your vocab!"
+			p @end_message = "Booooooo. You couldn't guess #{@code_word}? Better step up your vocab!"
 			@is_over = true
 		else
 			@is_over = false
 		end
 	end
+end
+
+
+puts "Welcome to the guessing game!"
+puts "Player One, please enter your secret word:"
+code_word = gets.chomp
+game = Game.new(code_word)
+puts "OK Player Two, Here's a look at the secret word:"
+puts "#{game.masked_word}"
+until game.is_over
+	puts "Now enter your guess at a letter."
+	guess = gets.chomp
+	game.guessed_letter(guess)
+	game.code_word_printer(guess)
+	game.game_status
 end

@@ -1,7 +1,7 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge [with: Alina].
+# We spent [1.5] hours on this challenge.
 
 # EXPLANATION OF require_relative
 #
@@ -85,3 +85,24 @@ alaska.virus_effects
 
 #=======================================================================
 # Reflection Section
+# What are the differences between the two different hash syntaxes shown 
+# in the state_data file?
+  # Hash rocket (=>) is useful to assign anything as a key, but defining keys
+  # with (:key_name) can only be done with more simple symbols
+# What does require_relative do? How is it different from require?
+  # require_relative allows you to load a file in the same directory as the one 
+  # containing that statement. It allows you to connect another file, while 
+  # 'require' only works within the current directory, so require_relative allows
+  # us to connect files within the same directory regardless of current directory.
+# What are some ways to iterate through a hash?
+  # hash.each, (hash.each_key, hash.each_pair, etc. are very specialized
+  # and .each will probably be most used) 
+# When refactoring virus_effects, what stood out to you about the variables,
+# if anything?
+  # That we don't have to pass them in, since their scope is the instance of
+  # our class.
+# What concept did you most solidify in this challenge?
+  # Scope was big.  I thought coming in that I had it down completely, but
+  # discussing the scope of constant variables was enlightening, as was the
+  # discussion and application of instance variables.
+# 

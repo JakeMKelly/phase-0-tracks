@@ -12,5 +12,13 @@ function length_finder(string_array) {
   return longest_string;
 }
 
+
+// Release 2:
+// Write a function that iterates through an object and combines key/value into one string
+// if any string is equal to any string made from a second object, return true.
+
+
+
+// Driver Code
 var test_array = ["long phrase","longest phrase","longer phrase"];
 console.log (length_finder(test_array));

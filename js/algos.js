@@ -2,15 +2,15 @@
 // Use .length to compare the length of each.
 // Use an if statement to store the longest string in that variable as it iterates.
 // return the variable after iterating through entire array
-// function search_array(array_to_search) {
-//   var longest_string = ''
-//   array_to_search.forEach(str.length)
-// }
-function longest_string(array_item) {
+function length_finder(string_array) {
   var longest_string = '';
-  if (array_item > longest_string) {
-    longest_string = array_item;
-  } else {
-    array_item = array_item;
+  for (index = 0; index < string_array.length; ++index) {
+    if (string_array[index].length > longest_string.length) {
+      longest_string = string_array[index];
+    }
   }
+  return longest_string;
 }
+
+var test_array = ["long phrase","longest phrase","longer phrase"];
+console.log (length_finder(test_array));

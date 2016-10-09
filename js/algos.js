@@ -44,3 +44,6 @@ console.log (length_finder(test_array));
 var person = {name: "Steven", age: 54, gender: "male"};
 var other_person = {name: "Tamir", age: 54, gender: "undefined"};
 console.log (object_comparison(person, other_person));
+var person = {name: "Sally", age: 44, gender: "female"};
+var other_person = {name: "Tanya", age: 54, gender: "undefined"};
+console.log (object_comparison(person, other_person));

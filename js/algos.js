@@ -4,7 +4,7 @@
 // return the variable after iterating through entire array
 function length_finder(string_array) {
   var longest_string = '';
-  for (index = 0; index < string_array.length; ++index) {
+  for (index = 0; index < string_array.length; index++) {
     if (string_array[index].length > longest_string.length) {
       longest_string = string_array[index];
     }
@@ -64,8 +64,10 @@ console.log (length_finder(test_array));
 // var person = {name: "Sally", age: 44, gender: "female"};
 // var other_person = {name: "Tanya", age: 54, gender: "undefined"};
 // console.log (object_comparison(person, other_person));
-for (i = 0; i < 10; i++) {
+// for (i = 0; i < 10; i++) {
   var driver_array = array_generator(5);
   console.log (driver_array);
   console.log (length_finder(driver_array));
-};
+// }
+
+// The for loop on this crashes my console/browser/anything every time I run it.  I've tried breaks, same result. 

@@ -1,0 +1,87 @@
+1. Display the information in one table (either table is fine).
+query:
+SELECT * FROM parks;
+output:
+1|Great Sand Dunes|2004|Colorado|false|2
+2|Rocky Mountain|1915|Colorado|true|1
+3|Mesa Verde|1905|Colorado|true|1
+4|Olympic|1938|Washington|true|1
+5|Mount Rainier|1899|Washington|true|1
+6|Cape Disappointment|1950|Washington|false|2
+7|Daroga|1981|Washington|false|2
+8|Eleven Mile|1970|Colorado|false|2
+
+2. 
+query:
+UPDATE parks SET landmark="false" WHERE name="Rocky Mountain";
+output:
+**no output**
+
+3. Display the information in both tables using one query.
+query: 
+SELECT * FROM parks, department WHERE parks.department_id = department.id;
+output:
+1|Great Sand Dunes|2004|Colorado|false|2|2|State|15000|false
+2|Rocky Mountain|1915|Colorado|false|1|1|National|250000|true
+3|Mesa Verde|1905|Colorado|true|1|1|National|250000|true
+4|Olympic|1938|Washington|true|1|1|National|250000|true
+5|Mount Rainier|1899|Washington|true|1|1|National|250000|true
+6|Cape Disappointment|1950|Washington|false|2|2|State|15000|false
+7|Daroga|1981|Washington|false|2|2|State|15000|false
+8|Eleven Mile|1970|Colorado|false|2|2|State|15000|false
+
+4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+query:
+SELECT parks.name, parks.location, department.name, department.has_rangers FROM parks, department WHERE parks.department_id = department.id;
+output:
+Great Sand Dunes|Colorado|State|false
+Rocky Mountain|Colorado|National|true
+Mesa Verde|Colorado|National|true
+Olympic|Washington|National|true
+Mount Rainier|Washington|National|true
+Cape Disappointment|Washington|State|false
+Daroga|Washington|State|false
+Eleven Mile|Colorado|State|false
+
+5. Delete an item that meets some condition (you can choose a condition that makes sense).
+query:
+DELETE FROM parks WHERE name="Great Sand Dunes";
+SELECT * FROM parks;
+output:
+2|Rocky Mountain|1915|Colorado|false|1
+3|Mesa Verde|1905|Colorado|true|1
+4|Olympic|1938|Washington|true|1
+5|Mount Rainier|1899|Washington|true|1
+6|Cape Disappointment|1950|Washington|false|2
+7|Daroga|1981|Washington|false|2
+8|Eleven Mile|1970|Colorado|false|2
+
+RELEASE 3
+2.Try a few different joins in your database, and record the commands and the output in queries.txt
+query:
+SELECT parks.name, department.name, parks.est_date, parks.location FROM parks INNER JOIN department ON parks.department_id = department.id;
+output:
+Rocky Mountain|National|1915|Colorado
+Mesa Verde|National|1905|Colorado
+Olympic|National|1938|Washington
+Mount Rainier|National|1899|Washington
+Cape Disappointment|State|1950|Washington
+Daroga|State|1981|Washington
+Eleven Mile|State|1970|Colorado
+
+query:
+SELECT parks.name, department.name, parks.est_date, parks.location FROM parks LEFT JOIN department ON parks.department_id = department.id ORDER BY parks.name;
+output:
+Cape Disappointment|State|1950|Washington
+Daroga|State|1981|Washington
+Eleven Mile|State|1970|Colorado
+Mesa Verde|National|1905|Colorado
+Mount Rainier|National|1899|Washington
+Olympic|National|1938|Washington
+Rocky Mountain|National|1915|Colorado
+
+query:
+SELECT * FROM parks RIGHT JOIN department ON parks.landmark = department.has_rangers;
+
+Output:
+Error: RIGHT and FULL OUTER JOINs are not currently supported

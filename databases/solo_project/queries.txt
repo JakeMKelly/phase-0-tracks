@@ -55,3 +55,33 @@ output:
 6|Cape Disappointment|1950|Washington|false|2
 7|Daroga|1981|Washington|false|2
 8|Eleven Mile|1970|Colorado|false|2
+
+RELEASE 3
+2.Try a few different joins in your database, and record the commands and the output in queries.txt
+query:
+SELECT parks.name, department.name, parks.est_date, parks.location FROM parks INNER JOIN department ON parks.department_id = department.id;
+output:
+Rocky Mountain|National|1915|Colorado
+Mesa Verde|National|1905|Colorado
+Olympic|National|1938|Washington
+Mount Rainier|National|1899|Washington
+Cape Disappointment|State|1950|Washington
+Daroga|State|1981|Washington
+Eleven Mile|State|1970|Colorado
+
+query:
+SELECT parks.name, department.name, parks.est_date, parks.location FROM parks LEFT JOIN department ON parks.department_id = department.id ORDER BY parks.name;
+output:
+Cape Disappointment|State|1950|Washington
+Daroga|State|1981|Washington
+Eleven Mile|State|1970|Colorado
+Mesa Verde|National|1905|Colorado
+Mount Rainier|National|1899|Washington
+Olympic|National|1938|Washington
+Rocky Mountain|National|1915|Colorado
+
+query:
+SELECT * FROM parks RIGHT JOIN department ON parks.landmark = department.has_rangers;
+
+Output:
+Error: RIGHT and FULL OUTER JOINs are not currently supported

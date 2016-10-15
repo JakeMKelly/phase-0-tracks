@@ -45,5 +45,13 @@ Eleven Mile|Colorado|State|false
 
 5. Delete an item that meets some condition (you can choose a condition that makes sense).
 query:
-
+DELETE FROM parks WHERE name="Great Sand Dunes";
+SELECT * FROM parks;
 output:
+2|Rocky Mountain|1915|Colorado|false|1
+3|Mesa Verde|1905|Colorado|true|1
+4|Olympic|1938|Washington|true|1
+5|Mount Rainier|1899|Washington|true|1
+6|Cape Disappointment|1950|Washington|false|2
+7|Daroga|1981|Washington|false|2
+8|Eleven Mile|1970|Colorado|false|2

@@ -10,3 +10,32 @@ output:
 6|Cape Disappointment|1950|Washington|false|2
 7|Daroga|1981|Washington|false|2
 8|Eleven Mile|1970|Colorado|false|2
+
+2. 
+query:
+UPDATE parks SET landmark="false" WHERE name="Rocky Mountain";
+output:
+**no output**
+
+3. Display the information in both tables using one query.
+query: 
+SELECT * FROM parks, department WHERE parks.department_id = department.id;
+output:
+1|Great Sand Dunes|2004|Colorado|false|2|2|State|15000|false
+2|Rocky Mountain|1915|Colorado|false|1|1|National|250000|true
+3|Mesa Verde|1905|Colorado|true|1|1|National|250000|true
+4|Olympic|1938|Washington|true|1|1|National|250000|true
+5|Mount Rainier|1899|Washington|true|1|1|National|250000|true
+6|Cape Disappointment|1950|Washington|false|2|2|State|15000|false
+7|Daroga|1981|Washington|false|2|2|State|15000|false
+8|Eleven Mile|1970|Colorado|false|2|2|State|15000|false
+
+4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+query:
+
+output:
+
+5. Delete an item that meets some condition (you can choose a condition that makes sense).
+query:
+
+output:

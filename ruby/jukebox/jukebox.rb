@@ -125,3 +125,6 @@ else
     puts "Hmm. No matches found. Try adding someone who fits that description!"
   end
 end
+
+# I'm working on building a comparison method, to suggest artists or bands similar to the one the user enters in. I think there is a lot that I can do with this program-it can be refactored and I think that there are a lot of features that can be added, as well.    
+# I know that there's more that I can do and more that I can add to give it more polish and better user interaction, and I'd like to keep working on it more. But overall, I'm pretty excited about making this on my own, and excited to keep working on it.

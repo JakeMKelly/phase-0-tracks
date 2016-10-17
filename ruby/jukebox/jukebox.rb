@@ -18,6 +18,13 @@ def load_jukebox(db, name, genre, task)
   db.execute("INSERT INTO jukebox (name, genre, task) VALUES (?, ?, ?)", [name, genre, task])
 end
 
+def view_jukebox(db)
+  group_list = db.execute("SELECT * FROM jukebox")
+  group_list.each do |primary, name, genre, task|
+    puts "You have '#{name}' listed as #{genre}, good for listening to while #{task}."
+  end
+end
+
 def call_artist_name(db, name)
   artist = db.execute("SELECT * FROM jukebox WHERE name=?", [name])
   artist.each do |primary, name, genre, task|
@@ -40,37 +47,66 @@ def call_artist_task(db, task)
 end
 
 def choose_direction(usage)
-  until usage == 'add' || usage == 'suggestions'
-    puts "Sorry, I didn't understand. To add an artist, type 'add'. If you want suggestions, type 'suggestions'."
-    usage = gets.chomp
-    break if  usage == 'add' || usage == 'suggestions'
+  until usage == 'add' || usage == 'browse'
+  puts "Sorry, I didn't understand. To add an artist, type 'add'. If you want to browse artists, type 'browse'."
+  usage = gets.chomp
+  break if  usage == 'add' || usage == 'browse'
+  end 
+  if usage == 'add'
+   true
+  elsif usage == 'browse'
+   false
+  else
   end
 end
 
-# User Interface
-puts "-" * 25 
-puts "\n"
-puts "Jukebox is on!"
-puts "\n"
-puts "-" * 25
-puts "What would you like to do today?"
-puts "To add an artist, type 'add'. If you want suggestions, type 'suggestions'."
-usage = gets.chomp
-choose_direction(usage)
 
-if usage == 'add'
-  load_jukebox(db, "Mumford", "bluegrass", "fishing")
-elsif usage == 'suggestions'
-  call_artist_name(db, "Run the Jewelz")
-else
-end
+
+# User Interface
 
 load_jukebox(db, "MGMT", "pop", "dancing")
 load_jukebox(db, "Alt-J", "mood music", "writing")
 load_jukebox(db, "Run the Jewelz", "hip hop", "driving")
 load_jukebox(db, "Sigur Ros", "mood music", "coding")
 
-call_artist_name(db, "Run the Jewelz")
-call_artist_genre(db, "mood music")
-call_artist_task(db, "dancing")
+puts "-" * 25 
+puts "\n"
+puts "Jukebox is on!"
+puts "\n"
+puts "-" * 25
+puts "What would you like to do today?"
+valid_selection = false
+puts "To add an artist, type 'add'. If you want to browse artists, type 'browse'."
+usage = gets.chomp
+
+if choose_direction(usage) == true
+  puts "Great, what's the artist/group's name?"
+  artist_name = gets.chomp
+  puts "What genre are they?"
+  artist_genre = gets.chomp
+  puts "What's the best activity to do while listening?"
+  artist_task = gets.chomp
+  load_jukebox(db, artist_name, artist_genre, artist_task)
+else
+  puts "Let's pick someone. Do you want to browse by genre, activity or name? If you want to see your entire library, just type 'library'."
+    browse_key = gets.chomp
+  if browse_key == 'genre'
+    puts "OK, let me find everyone in that category. Which genre are you in the mood for?"
+    preferred_genre = gets.chomp
+    call_artist_genre(db, preferred_genre)
+  elsif browse_key == 'activity'
+    puts "OK, what's the activity?"
+    preferred_activity = gets.chomp
+    call_artist_task(db, preferred_activity)
+  elsif browse_key == 'name'
+    puts "OK, what's the artist's or band's name?"
+    preferred_artist = gets.chomp
+    call_artist_name(db, preferred_artist)
+  elsif browse_key == 'library'
+    view_jukebox(db)
+  else
+    puts "Hmm. No matches found. Try adding someone who fits that description!"
+  end
+end
+
 db.execute("DROP TABLE jukebox")

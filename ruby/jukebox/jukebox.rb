@@ -34,7 +34,7 @@ end
 
 def call_artist_genre(db, genre)
   artist = db.execute("SELECT * FROM jukebox WHERE genre=?", [genre])
-  artist.each do |primary, name,|
+  artist.each do |primary, name|
       puts "In the mood for #{genre}, huh? Try playing some #{name}." 
   end
 end
@@ -60,14 +60,24 @@ def choose_direction(usage)
   end
 end
 
+# def similar_artists(db, known_artist)
+#   p artist = db.execute("SELECT * FROM jukebox WHERE name=?", [known_artist])
+#   p other_artists = db.execute("SELECT * FROM jukebox WHERE name!=?", [known_artist])
+#   other_artists.each do |artist_row|
+#     artist_row.each do |id, other_name, genre, task|
+#       if artist.each.include?("#{genre}")
+#         puts "#{artist_row[other_name]}"
+#       elsif artist.each.include?("#{task}")
+#         puts "#{artist_row[other_name]}"
+#       else
+#         puts "Sorry, I couldn't find anyone similar. Try adding more!"
+#       end
+#     end
+#   end
+# end
 
 
 # User Interface
-
-load_jukebox(db, "MGMT", "pop", "dancing")
-load_jukebox(db, "Alt-J", "mood music", "writing")
-load_jukebox(db, "Run the Jewelz", "hip hop", "driving")
-load_jukebox(db, "Sigur Ros", "mood music", "coding")
 
 puts "-" * 25 
 puts "\n"
@@ -102,11 +112,16 @@ else
     puts "OK, what's the artist's or band's name?"
     preferred_artist = gets.chomp
     call_artist_name(db, preferred_artist)
+    # puts "Would you like some suggestions related to #{preferred_artist}?"
+    # related_artists = gets.chomp
+    #   if related_artists == 'yes'
+    #     similar_artists(db, preferred_artist)
+    #   else
+    #     puts "OK, maybe next time."
+    #   end
   elsif browse_key == 'library'
     view_jukebox(db)
   else
     puts "Hmm. No matches found. Try adding someone who fits that description!"
   end
 end
-
-db.execute("DROP TABLE jukebox")

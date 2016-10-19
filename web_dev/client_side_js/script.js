@@ -7,10 +7,13 @@ function addArialFont() {
 
 addArialFont();
 
+document.getElementById('bernie-hawk').style.visibility = "hidden";
 
-function showPhoto(event) {
-  event.target.style.visibility = "hidden"; 
+function hidePhoto(){
+  console.log("Worked!")
+  document.getElementById('bernie-hawk').style.visibility = "visible"; 
+  event.target.style.visibility = "hidden";
 }
 
-var bernie = document.getElementById("bernie-hawk");
-bernie.addEventListener("click", showPhoto);
+var button = document.getElementById("button");
+button.addEventListener("click", hidePhoto);

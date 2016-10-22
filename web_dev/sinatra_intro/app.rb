@@ -53,3 +53,10 @@ get '/students/:id' do
   student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
   student.to_s
 end
+
+get '/:int_1/plus/:int_2' do
+  x = params[:int_1].to_i
+  y = params[:int_2].to_i
+  sum = x + y
+  "#{x} plus #{y} is equal to #{sum}."
+end

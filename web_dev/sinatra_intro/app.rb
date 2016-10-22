@@ -28,6 +28,10 @@ get '/:person_1/loves/:person_2' do
   "#{params[:person_1]} loves #{params[:person_2]}"
 end
 
+get '/great_job/:person' do
+  "Good job, #{params[:person]}!"
+end
+
 # write a GET route that retrieves
 # all student data
 get '/students' do

@@ -1,0 +1,23 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+}
+
+#needle {
+  height: 25%; 
+  width: 25%;
+}
+
+#market {
+  height: 25%; 
+  width: 25%;
+}
+
+#waterfront {
+  height: 25%; 
+  width: 25%;
+}
+
+#bux {
+  height: 25%; 
+  width: 25%;
+}
